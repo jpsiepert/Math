@@ -1,4 +1,4 @@
-var app = angular.module('SchoolRef', ['ngRoute', 'firebase']);
+var app = angular.module('SchoolRef', ['ngRoute', 'firebase', 'textAngular']);
 
 app.config(function($routeProvider){
 	$routeProvider

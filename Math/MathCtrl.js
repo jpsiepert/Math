@@ -16,7 +16,7 @@ app.controller('MathCtrl', function($scope, mathRef){
 	};
 
 	$scope.addMathEquation = function(){
-		$scope.math.timestamp = Date.now();
+		$scope.equation.timestamp = Date.now();
 		var str = $scope.equation.formula;
 		for(var i = 0; i<str.length;i++){
 			if(str[i] === 'p' && str[i + 1] === 'i'){

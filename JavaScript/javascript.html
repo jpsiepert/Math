@@ -5,10 +5,12 @@
 		<div class='form-group'>
 			<label>Javascript Title</label>
 				<input type='text' placeholder='Javascript Title' ng-model='javascript.name' class='form-control' /> 
+			
 			<label>Code</label>
-				<textarea class='form-control' rows='3' ng-model='javascript.code'></textarea>
+				<div text-angular ng-model='javascript.code'></div>
+			
 			<label>Example</label>
-			<textarea class='form-control' rows='3' ng-model='javascript.example'></textarea>
+				<div text-angular ng-model='javascript.example'></div>
 			
 			<button class='btn submit' ng-click='addJavascript(javascript)'>Submit</button>
 
@@ -19,12 +21,12 @@
 
 	<ul class="list-group">
 	<input class='form-control' type='text' placeholder='Search Tips' ng-model='search'/>
-	  <li class="list-group-item science" ng-repeat="js in javascripts |filter: search">
+	  <li class="list-group-item javascript" ng-repeat="js in javascripts |filter: search">
 	    <b>Title:</b> {{js.name}}
 	    	<br/>
-		<b>Code:</b> {{js.code}}
+		<b>Code:</b> <p ng-bind-html='js.code'></p>
 			<br/>
-		<b>Example:</b> {{js.example}}
+		<b>Example:</b> <p ng-bind-html='js.example'></p>
 			<br/>
 		<p class='timestamp'><b>Time:</b> {{js.timestamp | date: 'medium'}}</p>
 

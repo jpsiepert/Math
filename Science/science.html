@@ -5,10 +5,12 @@
 		<div class='form-group'>
 			<label>Science Formula Title</label>
 				<input type='text' placeholder='Science Title' ng-model='science.name' class='form-control' /> 
+			
 			<label>Formula</label>
-				<textarea class='form-control' rows='3' ng-model='science.formula'></textarea>
+				<div text-angular ng-model='science.formula'></div>
+			
 			<label>Example</label>
-			<textarea class='form-control' rows='3' ng-model='science.example'></textarea>
+				<div text-angular ng-model='science.example'></div>
 			
 			<button class='btn submit' ng-click='addScienceFormula()'>Submit</button>
 			
@@ -22,9 +24,9 @@
   <li class="list-group-item science" ng-repeat="science in sciences |filter: search">
     <b>Title:</b> {{science.name}}
     <br/>
-   <b>Formula:</b> {{science.formula}}
+   <b>Formula:</b> <p ng-bind-html='science.formula'></p>
    <br/>
-   <b>Example:</b> {{science.example}}
+   <b>Example:</b> <p ng-bind-html='science.example'></p>
    <p class='timestamp'><b>Time:</b> {{science.timestamp | date: 'medium'}}</p>
 
   </li>

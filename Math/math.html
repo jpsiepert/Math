@@ -6,9 +6,10 @@
 			<label>Equation Name</label>
 				<input type='text' placeholder='Equation Name' ng-model='equation.name' class='form-control' /> 
 			<label>Formula</label>
-				<textarea class='form-control' rows='3' ng-model='equation.formula'></textarea>
+				<div text-angular ng-model='equation.formula'></div>
+			
 			<label>Example</label>
-			<textarea class='form-control' rows='3' ng-model='equation.example'></textarea>
+				<div text-angular ng-model='equation.example'></div>
 			
 			<button class='btn submit' ng-click='addMathEquation()'>Submit</button>
 			
@@ -22,10 +23,10 @@
   <li class="list-group-item math" ng-repeat="equation in equations |filter: search">
     <b>Name:</b> {{equation.name}}
     <br/>
-   <b>Equation:</b> {{equation.formula}}
+   <b>Equation:</b> <p ng-bind-html='equation.formula'></p>
    <br/>
-   <b>Example:</b> {{equation.example}}
-   <p class='timestamp'><b>Time:</b> {{math.timestamp | date: 'medium'}}</p>
+   <b>Example:</b> <p ng-bind-html='equation.example'></p>
+   <p class='timestamp'><b>Time:</b> {{equation.timestamp | date: 'medium'}}</p>
   </li>
 
 </ul>

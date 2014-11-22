@@ -6,9 +6,9 @@
 			<label>Grammar Title</label>
 				<input type='text' placeholder='Grammar Title' ng-model='english.name' class='form-control' /> 
 			<label>Tip</label>
-				<textarea class='form-control' rows='3' ng-model='english.tip'></textarea>
+				<div text-angular ng-model='english.tip'></div>
 			<label>Example</label>
-			<textarea class='form-control' rows='3' ng-model='english.example'></textarea>
+			<div text-angular ng-model='english.example'></div>
 			
 			<button class='btn submit' ng-click='addEnglishTip()'>Submit</button>
 			
@@ -22,9 +22,9 @@
   <li class="list-group-item english" ng-repeat="english in englishes |filter: search">
     <b>Title:</b> {{english.name}}
     <br/>
-   <b>Tip:</b> {{english.tip}}
+   <b>Tip:</b> <p ng-bind-html='english.tip'></p>
    <br/>
-   <b>Example:</b> {{english.example}}
+   <b>Example:</b> <p ng-bind-html='english.example'></p>
    <p class='timestamp'><b>Time:</b> {{english.timestamp | date: 'medium'}}</p>
   </li>
 
