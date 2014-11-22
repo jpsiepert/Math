@@ -1,0 +1,32 @@
+<div class='col-md-8'>
+	
+	<button class='btn home' ng-show='submitEquationButton' ng-click="showEquationForm()">Submit New Equation</button>
+	<form ng-show='submitEquation' role='form'>
+		<div class='form-group'>
+			<label>Equation Name</label>
+				<input type='text' placeholder='Equation Name' ng-model='equation.name' class='form-control' /> 
+			<label>Formula</label>
+				<textarea class='form-control' rows='3' ng-model='equation.formula'></textarea>
+			<label>Example</label>
+			<textarea class='form-control' rows='3' ng-model='equation.example'></textarea>
+			
+			<button class='btn submit' ng-click='addMathEquation()'>Submit</button>
+			
+			<button class='btn cancel' ng-click="hideEquationForm()">Cancel</button>
+
+		</div>
+	</form>
+
+<ul class="list-group">
+<input class='form-control' type='text' placeholder='Search Equations' ng-model='search'/>
+  <li class="list-group-item math" ng-repeat="equation in equations |filter: search">
+    <b>Name:</b> {{equation.name}}
+    <br/>
+   <b>Equation:</b> {{equation.formula}}
+   <br/>
+   <b>Example:</b> {{equation.example}}
+   <p class='timestamp'><b>Time:</b> {{math.timestamp | date: 'medium'}}</p>
+  </li>
+
+</ul>
+</div>

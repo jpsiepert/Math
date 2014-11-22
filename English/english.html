@@ -1,0 +1,32 @@
+<div class='col-md-8'>
+	
+	<button class='btn home' ng-show='submitEnglishButton' ng-click="showEnglishForm()">Add Grammar Tips</button>
+	<form ng-show='submitEnglish' role='form'>
+		<div class='form-group'>
+			<label>Grammar Title</label>
+				<input type='text' placeholder='Grammar Title' ng-model='english.name' class='form-control' /> 
+			<label>Tip</label>
+				<textarea class='form-control' rows='3' ng-model='english.tip'></textarea>
+			<label>Example</label>
+			<textarea class='form-control' rows='3' ng-model='english.example'></textarea>
+			
+			<button class='btn submit' ng-click='addEnglishTip()'>Submit</button>
+			
+			<button class='btn cancel' ng-click="hideEnglishForm()">Cancel</button>
+
+		</div>
+	</form>
+
+<ul class="list-group">
+<input class='form-control' type='text' placeholder='Search Tips' ng-model='search'/>
+  <li class="list-group-item english" ng-repeat="english in englishes |filter: search">
+    <b>Title:</b> {{english.name}}
+    <br/>
+   <b>Tip:</b> {{english.tip}}
+   <br/>
+   <b>Example:</b> {{english.example}}
+   <p class='timestamp'><b>Time:</b> {{english.timestamp | date: 'medium'}}</p>
+  </li>
+
+</ul>
+</div>

@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='SchoolRef'>
 <head>
-	<title></title>
+	<title>School References</title>
+	<link rel='stylesheet' type='text/css' href='bower_components/bootstrap/dist/css/bootstrap.css'>
+	<link rel='stylesheet' type='text/css' href='bower_components/font-awesome/css/font-awesome.css'>
+	<link rel='stylesheet' type='text/css' href='Styles/styles.css'>
 </head>
-<body>
+<body ng-controller='MainCtrl'>
 
-<script src="app.js"></script>
-<script src="service.js"></script>
+<div class='container'>
+<div class="page-header title-header">
+  <h1>School References</h1>
+</div>
+	<div class='row'>
+		<div class='col-md-4'>
+			<ul class="list-group">
+				<li role="presentation"><a class="list-group-item home" ng-click='goToHome()'>Home</a></li>
+				<li role="presentation" ><a class='list-group-item math' ng-click='goToMath()'>Math</a></li>
+				<li role="presentation" ><a class='list-group-item english' ng-click='goToEnglish()'>English</a></li>
+				<li role="presentation" ><a class='list-group-item science' ng-click='goToScience()'>Science</a></li>
+				<li role="presentation" ><a class='list-group-item javascript' ng-click='goToJavascript()'>JavaScript</a></li>
+			</ul>
+			 <img src='Styles/schoolhouse.jpg' height:'300' width='300' >
+		</div>
+	
+
+
+<div ng-view></div>
+</div>
+</div>
+
+<script src='bower_components/angular/angular.js'></script>
+<script src='bower_components/angular-route/angular-route.js'></script>
+<script src='bower_components/firebase/firebase.js'></script>
+<script src='bower_components/angularfire/dist/angularfire.js'></script>
+<script src='app.js'></script>
+<script src='MainCtrl.js'></script>
+<script src='service.js'></script>
+<script src='Home/HomeCtrl.js'></script>
+<script src='Math/MathCtrl.js'></script>
+<script src='English/EnglishCtrl.js'></script>
+<script src='Science/ScienceCtrl.js'></script>
+<script src='Javascript/JavascriptCtrl.js'></script>
 </body>
 </html>

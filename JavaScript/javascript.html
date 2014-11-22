@@ -1,0 +1,34 @@
+<div class='col-md-8'>
+	
+	<button class='btn home' ng-show='submitJavascriptButton' ng-click="showJavascriptForm()">Add JavaScript</button>
+	<form ng-show='submitJavascript' role='form'>
+		<div class='form-group'>
+			<label>Javascript Title</label>
+				<input type='text' placeholder='Javascript Title' ng-model='javascript.name' class='form-control' /> 
+			<label>Code</label>
+				<textarea class='form-control' rows='3' ng-model='javascript.code'></textarea>
+			<label>Example</label>
+			<textarea class='form-control' rows='3' ng-model='javascript.example'></textarea>
+			
+			<button class='btn submit' ng-click='addJavascript(javascript)'>Submit</button>
+
+			<button class='btn cancel' ng-click="hideJavascriptForm()">Cancel</button>
+
+		</div>
+	</form>
+
+	<ul class="list-group">
+	<input class='form-control' type='text' placeholder='Search Tips' ng-model='search'/>
+	  <li class="list-group-item science" ng-repeat="js in javascripts |filter: search">
+	    <b>Title:</b> {{js.name}}
+	    	<br/>
+		<b>Code:</b> {{js.code}}
+			<br/>
+		<b>Example:</b> {{js.example}}
+			<br/>
+		<p class='timestamp'><b>Time:</b> {{js.timestamp | date: 'medium'}}</p>
+
+	  </li>
+
+	</ul>
+</div>

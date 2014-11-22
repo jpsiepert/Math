@@ -1,0 +1,33 @@
+<div class='col-md-8'>
+	
+	<button class='btn home' ng-show='submitScienceButton' ng-click="showScienceForm()">Add Science Formula</button>
+	<form ng-show='submitScience' role='form'>
+		<div class='form-group'>
+			<label>Science Formula Title</label>
+				<input type='text' placeholder='Science Title' ng-model='science.name' class='form-control' /> 
+			<label>Formula</label>
+				<textarea class='form-control' rows='3' ng-model='science.formula'></textarea>
+			<label>Example</label>
+			<textarea class='form-control' rows='3' ng-model='science.example'></textarea>
+			
+			<button class='btn submit' ng-click='addScienceFormula()'>Submit</button>
+			
+			<button class='btn cancel' ng-click="hideScienceForm()">Cancel</button>
+
+		</div>
+	</form>
+
+<ul class="list-group">
+<input class='form-control' type='text' placeholder='Search Tips' ng-model='search'/>
+  <li class="list-group-item science" ng-repeat="science in sciences |filter: search">
+    <b>Title:</b> {{science.name}}
+    <br/>
+   <b>Formula:</b> {{science.formula}}
+   <br/>
+   <b>Example:</b> {{science.example}}
+   <p class='timestamp'><b>Time:</b> {{science.timestamp | date: 'medium'}}</p>
+
+  </li>
+
+</ul>
+</div>

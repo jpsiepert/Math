@@ -1,0 +1,66 @@
+
+.title-header {
+	text-align: center;
+	color: #dc6c63;
+}
+
+li a {
+	text-decoration: none;
+	cursor: pointer;
+	
+}
+
+li {
+	list-style-type:  none;
+}
+a.list-group-item{
+	color: black;
+}
+
+.home {
+	color: #000;
+	border: solid #DC6c63;
+	background-color: #fff;
+}
+
+button.home {
+	background-color: #fff;
+}
+
+.math {
+	color: #000;
+	background-color: rgba(255,255,255,0.5);
+	border: solid #575099;
+}
+
+.english {
+	border: solid #4CA85C;
+}
+
+.science {
+	border: solid #DCC163;
+}
+
+.javascript {
+	border: solid #226666;
+}
+
+.submit {
+	border: solid #76BDDC;
+	background-color: white;
+
+}
+
+.cancel {
+	border: solid #F6B66A;
+	background-color: white;
+}
+
+.mailto {
+	text-align: center;
+	font-size: 50px;
+}
+
+.timestamp {
+	text-align: right;
+}
